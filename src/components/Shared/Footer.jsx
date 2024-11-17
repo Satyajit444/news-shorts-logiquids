@@ -1,10 +1,10 @@
 import React from "react";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
-
+import style from "./shared.module.css";
 function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-6 mt-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+      <div className={style["footer-ctn"]}>
         <div className="flex items-center space-x-4">
           <img
             src="https://via.placeholder.com/40"
@@ -18,13 +18,13 @@ function Footer() {
         </div>
 
         <div className="flex flex-col items-center space-y-2 mt-4 md:mt-0">
-          <a href="#" className="text-sm hover:underline">
+          <a href="#" className={style["footer-text"]}>
             Contact Us
           </a>
-          <a href="#" className="text-sm hover:underline">
+          <a href="#" className={style["footer-text"]}>
             Terms & Conditions
           </a>
-          <a href="#" className="text-sm hover:underline">
+          <a href="#" className={style["footer-text"]}>
             Privacy Policies
           </a>
         </div>
@@ -34,7 +34,7 @@ function Footer() {
             <FaFacebook size={20} />
           </a>
           <a href="#" className="text-gray-400 hover:text-white">
-            <FaTwitter size={20}/>
+            <FaTwitter size={20} />
           </a>
           <a href="#" className="text-gray-400 hover:text-white">
             <FaLinkedin size={20} />

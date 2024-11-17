@@ -1,0 +1,18 @@
+.nav-ctn {
+  @apply bg-white bg-opacity-50 backdrop-blur-md p-4 text-gray-800 flex items-center fixed w-full z-10 shadow-xl;
+}
+.nav-title {
+  @apply container mx-auto flex justify-center items-center;
+}
+.sidebar-ctn {
+  @apply fixed top-0 left-0 h-full w-64 bg-[#303036] shadow-lg p-4 z-50 modal transform;
+}
+.close-btn-sidebar {
+  @apply text-white justify-between w-full flex font-bold mb-4;
+}
+.footer-ctn {
+  @apply max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4;
+}
+.footer-text {
+  @apply text-sm hover:underline;
+}

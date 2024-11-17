@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
-
+import style from "./shared.module.css";
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false); // Track closing animation
@@ -42,13 +42,13 @@ const Navbar = () => {
 
   return (
     <nav className="h-16">
-      <section className="bg-white bg-opacity-50 backdrop-blur-md p-4 text-gray-800 flex items-center fixed w-full z-10 shadow-xl">
+      <section className={style["nav-ctn"]}>
         <RxHamburgerMenu
           size={20}
           className="cursor-pointer"
           onClick={() => setIsModalOpen(true)}
         />
-        <div className="container mx-auto flex justify-center items-center">
+        <div className={style["nav-title"]}>
           <h1 className="text-xl font-bold">Inshorts</h1>
         </div>
       </section>
@@ -62,12 +62,12 @@ const Navbar = () => {
           onClick={handleOverlayClick}
         >
           <div
-            className={`fixed top-0 left-0 h-full w-64 bg-[#303036] shadow-lg p-4 z-50 modal transform ${
+            className={` ${style["sidebar-ctn"]} ${
               isClosing ? "-translate-x-full" : "translate-x-0"
             } transition-transform duration-300`}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="text-white justify-between w-full flex font-bold mb-4">
+            <button className={style["close-btn-sidebar"]}>
               <div className="text-[#6d6d70] font-medium">Categories</div>
               <IoClose size={20} onClick={closeModal} />
             </button>
