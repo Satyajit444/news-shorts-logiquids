@@ -5,7 +5,7 @@
   @apply container mx-auto flex justify-center items-center;
 }
 .sidebar-ctn {
-  @apply fixed top-0 left-0 h-full w-64 bg-[#303036] shadow-lg p-4 z-50 modal transform;
+  @apply fixed top-0 left-0 h-full w-64 bg-[#303036] shadow-lg p-4 z-50 transform;
 }
 .close-btn-sidebar {
   @apply text-white justify-between w-full flex font-bold mb-4;
