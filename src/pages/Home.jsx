@@ -30,7 +30,7 @@ const Home = () => {
     <div className="flex flex-col md:flex-row h-screen overflow-hidden">
       {/* News List Section */}
       <div
-        className={`w-full md:w-1/2 lg:w-2/3 px-6 py-7 overflow-y-auto transition-transform ${
+        className={`w-full md:w-1/2 lg:w-2/3 px-6 py-7 overflow-y-auto transition-transform home-page-ctn ${
           selectedArticle ? "md:translate-x-[-50%] lg:translate-x-0" : ""
         }`}
       >
