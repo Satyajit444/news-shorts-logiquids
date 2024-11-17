@@ -1,13 +1,13 @@
 import React from "react";
 import { formatDate } from "../api/dateformat";
-
+import style from "./news.module.css";
 const NewsCard = ({ article, handleCardClick }) => {
   const { title, description, url, urlToImage, author, publishedAt } = article;
 
   return (
     <div
       onClick={() => handleCardClick(article)}
-      className="max-w-4xl mx-auto mb-6 rounded shadow-md overflow-hidden border bg-white hover:cursor-pointer p-2 md:flex"
+      className={style["news-card-ctn"]}
     >
       <div className="relative h-48 md:h-auto md:w-1/3">
         <img
@@ -18,21 +18,18 @@ const NewsCard = ({ article, handleCardClick }) => {
       </div>
 
       <div className="p-4 md:w-2/3">
-        <h2 className="text-base font-semibold text-gray-800 line-clamp-2">
-          {title}
-        </h2>
+        <h2 className={style["news-title"]}>{title}</h2>
 
         <p className="text-xs text-gray-500 mt-2">
           short by {author} / {formatDate(publishedAt)}
         </p>
 
-        <p className="text-sm text-gray-700 mt-2 line-clamp-3">{description}</p>
+        <p className={style["news-description"]}>{description}</p>
 
         <a
-          href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 text-sm mt-3 inline-block font-medium hover:underline"
+          className={style["news-href"]}
         >
           Read more at X (Formerly Twitter)
         </a>

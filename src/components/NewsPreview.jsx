@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { contentData } from "../api/news";
-
+import style from "./news.module.css";
 const NewsPreview = ({ article, onClose }) => {
   const { title, content, url, urlToImage, author, publishedAt } = article;
   useEffect(() => {
     contentData(url);
   }, []);
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className={style["news-prev-ctn"]}>
       <img
         src={urlToImage || "https://via.placeholder.com/150"}
         alt={title}
         className="w-full h-48 object-cover"
       />
       <div className="p-6">
-        <h2 className="text-lg font-bold text-gray-800 mb-2">{title}</h2>
+        <h2 className={style["news-prev-title"]}>{title}</h2>
         <p className="text-sm text-gray-500 mb-4">
           By {author} /{" "}
           {new Date(publishedAt).toLocaleString("en-US", {
@@ -33,10 +33,7 @@ const NewsPreview = ({ article, onClose }) => {
         >
           Read Full Article
         </a>
-        <button
-          onClick={onClose}
-          className="block mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-        >
+        <button onClick={onClose} className={style["news-prev-close"]}>
           Close Preview
         </button>
       </div>

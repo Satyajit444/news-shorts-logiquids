@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { fetchNews } from "../api/news";
 import NewsCard from "../components/NewsCard";
 import NewsPreview from "../components/NewsPreview";
-
+import style from "./main.module.css";
 const Home = () => {
   const [news, setNews] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
@@ -27,7 +27,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen overflow-hidden">
+    <div className={style["main-container"]}>
       {/* News List Section */}
       <div
         className={`${
@@ -44,7 +44,7 @@ const Home = () => {
       {/* Preview Pane (Always Rendered for Desktop) */}
       {selectedArticle ? (
         <div
-          className={`hidden md:block w-full md:w-1/2 lg:w-1/3 px-6 py-7 border-l bg-gray-50 overflow-y-auto transition-all duration-300 ease-in-out ${
+          className={`${style["news-prev-ctn"]} ${
             selectedArticle
               ? "opacity-100 translate-x-0"
               : "opacity-0 -translate-x-full"
@@ -56,12 +56,9 @@ const Home = () => {
 
       {/* Modal for Mobile */}
       {selectedArticle && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center md:hidden transition-opacity duration-300 ease-in-out">
-          <div className="relative bg-white w-full h-fit max-w-md mx-auto p-6 overflow-y-auto transition-transform duration-300 ease-in-out">
-            <button
-              onClick={closePreview}
-              className="absolute top-4 right-4 text-gray-600 font-semibold"
-            >
+        <div className={style["prev-ctn-modal"]}>
+          <div className={style["prev-modal-ctn-action"]}>
+            <button onClick={closePreview} className={style["prev-close-btn"]}>
               ✕
             </button>
             <div className="mt-4">

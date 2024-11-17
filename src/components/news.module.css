@@ -1,0 +1,21 @@
+.news-card-ctn {
+  @apply max-w-4xl mx-auto mb-6 rounded shadow-md overflow-hidden border bg-white hover:cursor-pointer p-2 md:flex;
+}
+.news-title {
+  @apply text-base font-semibold text-gray-800 line-clamp-2;
+}
+.news-href {
+  @apply text-blue-600 text-sm mt-3 inline-block font-medium hover:underline;
+}
+.news-description {
+  @apply text-sm text-gray-700 mt-2 line-clamp-3;
+}
+.news-prev-ctn {
+  @apply bg-white rounded-lg shadow-lg overflow-hidden;
+}
+.news-prev-title {
+  @apply text-lg font-bold text-gray-800 mb-2;
+}
+.news-prev-close {
+    @apply block mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600;
+  }
