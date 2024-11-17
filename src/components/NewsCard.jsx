@@ -7,7 +7,7 @@ const NewsCard = ({ article, handleCardClick }) => {
   return (
     <div
       onClick={() => handleCardClick(article)}
-      className="max-w-4xl mx-auto mb-6 rounded shadow-md overflow-hidden border bg-white hover:cursor-pointer md:p-2 md:flex"
+      className="max-w-4xl mx-auto mb-6 rounded shadow-md overflow-hidden border bg-white hover:cursor-pointer p-2 md:flex"
     >
       <div className="relative h-48 md:h-auto md:w-1/3">
         <img
