@@ -1,37 +1,33 @@
 import React from "react";
+import { formatDate } from "../api/dateformat";
 
-const NewsCard = ({ article }) => {
-  const { title, description, url, urlToImage } = article;
+const NewsCard = ({ article, handleCardClick }) => {
+  const { title, description, url, urlToImage, author, publishedAt } = article;
 
   return (
-    <div className="max-w-4xl mx-auto mb-6 bg-white rounded-lg shadow-md overflow-hidden border md:flex">
-      {/* Image Section */}
+    <div
+      onClick={() => handleCardClick(article)}
+      className="max-w-4xl mx-auto mb-6 rounded shadow-md overflow-hidden border bg-white hover:cursor-pointer md:p-2 md:flex"
+    >
       <div className="relative h-48 md:h-auto md:w-1/3">
         <img
-          src={urlToImage || "https://via.placeholder.com/150"} // Fallback image
+          src={urlToImage || "https://via.placeholder.com/150"}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover md:rounded-lg"
         />
       </div>
 
-      {/* Content Section */}
       <div className="p-4 md:w-2/3">
-        {/* Title */}
         <h2 className="text-base font-semibold text-gray-800 line-clamp-2">
           {title}
         </h2>
 
-        {/* Meta Information */}
         <p className="text-xs text-gray-500 mt-2">
-          short by Shalini Ojha / 11:28 am on Sunday 17 November, 2024
+          short by {author} / {formatDate(publishedAt)}
         </p>
 
-        {/* Description */}
-        <p className="text-sm text-gray-700 mt-2 line-clamp-3">
-          {description}
-        </p>
+        <p className="text-sm text-gray-700 mt-2 line-clamp-3">{description}</p>
 
-        {/* Read More */}
         <a
           href={url}
           target="_blank"
